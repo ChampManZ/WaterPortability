@@ -6,15 +6,25 @@
 }
 
 .flex-left {
-    width: 50%;
+    width: 60%;
     height: 100vh;
 }
 
 .flex-right {
-    width: 50%;
+    width: 40%;
 }
 
 .wqi-container {
     display: flex;
     justify-content: center;
+    align-content: space-evenly;
+    gap: 20em
+}
+
+.parameter-container {
+    display: flex;
+    justify-content: center;
+    align-content: space-evenly;
+    gap: 6em;
+    padding: 10px 10px;
 }
