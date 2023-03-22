@@ -17,4 +17,14 @@
 .wqi-container {
     display: flex;
     justify-content: center;
+    align-content: space-evenly;
+    gap: 5em;
+}
+
+.parameter-container {
+    display: flex;
+    justify-content: center;
+    align-content: space-evenly;
+    gap: 3em;
+    padding: 10px 10px;
 }
