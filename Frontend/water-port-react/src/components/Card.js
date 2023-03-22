@@ -3,15 +3,20 @@ import '../style/flexbox.css'
 
 function Card() {
 
+    const fontFamilyStyle = {
+        fontFamily: 'Mitr'
+    }
+
     const cardStyle = {
-        width: "400px",
+        width: "700px",
         boxShadow: "0px 0px 15px -5px",
         margin: "auto"
     }
 
     const wqiStyle = {
         height: "150px",
-        backgroundColor: "#95F39F"
+        backgroundColor: "#95F39F",
+        fontFamily: 'Mitr'
     }
 
     return (
@@ -23,11 +28,11 @@ function Card() {
                     <div>Excellent</div>
                 </div>
             </div>
-            <div className='parameter-container'>
-                <div>Temp</div>
-                <div>pH</div>
-                <div>Turbidity</div>
-                <div>Conductivity</div>
+            <div className='parameter-container' style={fontFamilyStyle}>
+                <div>Temp: 10</div>
+                <div>pH: 10</div>
+                <div>Turbidity: 10</div>
+                <div>Conductivity: 10</div>
             </div>
         </div>
     )
