@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+
+.guide {
+    background-color: #85D0FB;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.h1-guide {
+    font-family: 'Mitr';
+    color: #3F3F3F;
+    font-size: 64px;
+    margin: 0px;
+}
+
+.h3-guide {
+    font-family: 'Mitr';
+    color: #3F3F3F;
+    font-size: 28px;
+
+}
+
+.p-guide {
+    font-size: 20px;
+    margin: 0;
+}
+
+.break-point::before {
+    content: "hiddentext";
+    font-size: 0;
+    display: block;
+    line-height: 0;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto
+}
+

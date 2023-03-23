@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import Dashboard from './pages/Dashboard';
 import Landing from './pages/Landing';
+import Guide from './pages/Guide';
 
 function App() {
   return (
@@ -15,13 +16,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Landing />} />
+          <Route path='measuring-guide' element={<Guide/>} />
           <Route path='dashboard' element={<Dashboard />} />
 
         </Routes>
       </BrowserRouter>
-      {/* <Dashboard/> 
-      <Landing/> */}
-    
+      
+  
     </div>
   );
 }
