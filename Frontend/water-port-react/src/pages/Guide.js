@@ -36,7 +36,9 @@ function Guide() {
                 
                 <h1 className='h1-guide'>Measuring Guide</h1>
               
-                <p className='p-guide'>Hold the probe in the water until the check turns green. <span className='break-point'>Remove the probe when the check turned green.</span></p> 
+                <p className='p-guide'>Hold the probe in the water until the check turns green. 
+                <span className='break-point'>Remove the probe when the check turned green.</span></p> 
+                
                 <div className='center'>
 
                     <Box 
