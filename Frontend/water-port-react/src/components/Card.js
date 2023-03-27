@@ -1,4 +1,5 @@
 import React from 'react'
+import waterdrop from '../image/waterdrop.png'
 import '../style/flexbox.css'
 
 function Card() {
@@ -22,10 +23,10 @@ function Card() {
     return (
         <div style={cardStyle}>
             <div className='wqi-container' style={wqiStyle}>
-                <div>Image</div>
+                <img src={waterdrop} alt="waterdrop" width="75" height="100"></img>
                 <div>
-                    <div>98 WQI</div>
-                    <div>Excellent</div>
+                    <h2>90</h2>
+                    <h2>Good</h2>
                 </div>
             </div>
             <div className='parameter-container' style={fontFamilyStyle}>

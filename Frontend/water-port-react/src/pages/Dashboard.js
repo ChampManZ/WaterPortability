@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Card from '../components/Card'
 import WQICard from '../components/WQICard'
+import GradeCard from '../components/GradeCard'
 import '../style/flexbox.css'
 
 function Dashboard() {
@@ -19,10 +20,10 @@ function Dashboard() {
                     <Card /> <br />
                     <button type='button'>Measure again</button>
                     <h3>Water Quality Index</h3>
+                    <GradeCard />
                 </div>
                 <div class="flex-right" style={fontFamilyStyle}>
                     <WQICard />
-                    
                 </div>
             </div>
         </div>

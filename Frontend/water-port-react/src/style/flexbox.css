@@ -18,6 +18,7 @@
     display: flex;
     justify-content: center;
     align-content: space-evenly;
+    align-items: center;
     gap: 20em
 }
 
@@ -27,4 +28,52 @@
     align-content: space-evenly;
     gap: 6em;
     padding: 10px 10px;
+}
+
+.grade-container {
+    display: flex;
+    justify-content: start;
+    align-content: space-evenly;
+    gap: 10em;
+    background-color: #85D0FB;
+}
+
+.excellent-container {
+    display: flex;
+    justify-content: start;
+    align-content: space-evenly;
+    gap: 7em;
+    background-color: #95F39F;
+}
+
+.good-container {
+    display: flex;
+    justify-content: start;
+    align-content: space-evenly;
+    gap: 8.8em;
+    background-color: #C8F391;
+}
+
+.average-container {
+    display: flex;
+    justify-content: start;
+    align-content: space-evenly;
+    gap: 7.4em;
+    background-color: #F9F598;
+}
+
+.poor-container {
+    display: flex;
+    justify-content: start;
+    align-content: space-evenly;
+    gap: 8.5em;
+    background-color: #FBCE76;
+}
+
+.verypoor-container {
+    display: flex;
+    justify-content: start;
+    align-content: space-evenly;
+    gap: 6.5em;
+    background-color: #F9AD95;
 }
