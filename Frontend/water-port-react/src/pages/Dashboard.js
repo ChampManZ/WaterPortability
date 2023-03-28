@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Card from '../components/Card'
 import WQICard from '../components/WQICard'
 import GradeCard from '../components/GradeCard'
+import firebase from '../utils/firebase'
 import '../style/flexbox.css'
 
 function Dashboard() {
