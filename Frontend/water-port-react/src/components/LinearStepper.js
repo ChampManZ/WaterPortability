@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from '@mui/material/styles';
 import {useNavigate} from 'react-router-dom';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
@@ -11,7 +11,27 @@ import {
     Box,
   } from "@mui/material";
 
-
+  import { initializeApp } from "firebase/app";
+  import { getDatabase, ref, onValue, update } from "firebase/database";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyB4abIVXvrxB9Ubw7SRGDyaCiMWhP1PrTg",
+    authDomain: "water-portability.firebaseapp.com",
+    databaseURL: "https://water-portability-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "water-portability",
+    storageBucket: "water-portability.appspot.com",
+    messagingSenderId: "548406958050",
+    appId: "1:548406958050:web:05ac416fc2f7bf49304bbb",
+    measurementId: "G-667JGFNMPJ"
+  };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
 
   const theme = createTheme({
     components: {
@@ -63,27 +83,37 @@ return ["Hold temperature probe into the water",
         "Hold TDS probe into the water"];
 }
 
-function getStepContent(step) {
-switch (step) {
-    case 0:
-    return "Select campaign settings...";
-    case 1:
-    return "What is an ad group anyways?";
-    case 2:
-    return "This is the bit I really care about!";
-    default:
-    return "Unknown step";
-}
-}
+// function getStepContent(step) {
+// switch (step) {
+//     case 0:
+//     return "Select campaign settings...";
+//     case 1:
+//     return "What is an ad group anyways?";
+//     case 2:
+//     return "This is the bit I really care about!";
+//     default:
+//     return "Unknown step";
+// }
+// }
 
 export default function LinearStepper() {
 
     const [activeStep, setActiveStep] = React.useState(0); 
     const steps = getSteps();
 
+    const [tempBool, setTempBool] = useState(false)
+    const [phBool, setPhBool] = useState(false)
+    const [turbidityBool, setTurbidityBool] = useState(false)
+    const [conductivityBool, setConductivityBool] = useState(false)
+    const [tdsBool, setTdsBool] = useState(false)
+
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
-
+        setTempBool(false)
+        setPhBool(false)
+        setTurbidityBool(false)
+        setConductivityBool(false)
+        setTdsBool(false)
         };
 
     const handleReset = () => {
@@ -96,6 +126,60 @@ export default function LinearStepper() {
         navigate('/dashboard');
       };
 
+      const tempCheck = ref(database, 'TemperatureCheck/')
+      onValue(tempCheck, (snapshot) => {
+          const data = snapshot.val();
+          if (data === true) {
+            setTempBool(true)
+            const updates = {};
+            updates['TemperatureCheck/'] = false;
+            update(ref(database), updates)
+          }
+      });
+
+      const phCheck = ref(database, 'phCheck/')
+      onValue(phCheck, (snapshot) => {
+          const data = snapshot.val();
+          if (data === true) {
+            setPhBool(true)
+            const updates = {};
+            updates['phCheck/'] = false;
+            update(ref(database), updates)
+          }
+      });
+
+      const turbidityCheck = ref(database, 'TurbidityCheck/')
+      onValue(turbidityCheck, (snapshot) => {
+          const data = snapshot.val();
+          if (data === true) {
+            setTurbidityBool(true)
+            const updates = {};
+            updates['TurbidityCheck/'] = false;
+            update(ref(database), updates)
+          }
+      });
+
+      const conductivityCheck = ref(database, 'ConductivityCheck/')
+      onValue(conductivityCheck, (snapshot) => {
+          const data = snapshot.val();
+          if (data === true) {
+            setConductivityBool(true)
+            const updates = {};
+            updates['ConductivityCheck/'] = false;
+            update(ref(database), updates)
+          }
+      });
+
+      const tdsCheck = ref(database, 'TDSCheck/')
+      onValue(tdsCheck, (snapshot) => {
+          const data = snapshot.val();
+          if (data === true) {
+            setTdsBool(true)
+            const updates = {};
+            updates['TDSCheck/'] = false;
+            update(ref(database), updates)
+          }
+      });
         
     return(
         <ThemeProvider theme={theme}>
@@ -130,9 +214,30 @@ export default function LinearStepper() {
                   <Button onClick={handleReset} variant="contained" sx={{width: 100}}>Reset</Button>
                   <Box sx={{ flex: '1 1 auto' }} />
 
-                  <Button onClick={handleNext} variant="contained" sx={{width: 100}}> NEXT
-                    
-                  </Button>
+                  { tempBool ?
+                    <Button onClick={handleNext} variant="contained" sx={{width: 100}}>NEXT</Button>
+                    : ''
+                  }
+
+                  { phBool ?
+                    <Button onClick={handleNext} variant="contained" sx={{width: 100}}>NEXT</Button>
+                    : ''
+                  }
+
+                  { turbidityBool ?
+                    <Button onClick={handleNext} variant="contained" sx={{width: 100}}>NEXT</Button>
+                    : ''
+                  }
+
+                  { conductivityBool ?
+                    <Button onClick={handleNext} variant="contained" sx={{width: 100}}>NEXT</Button>
+                    : ''
+                  }
+
+                  { tdsBool ?
+                    <Button onClick={handleNext} variant="contained" sx={{width: 100}}>NEXT</Button>
+                    : ''
+                  }
 
                 </Box>
               </React.Fragment>
