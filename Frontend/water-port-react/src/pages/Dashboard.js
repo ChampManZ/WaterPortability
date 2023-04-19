@@ -5,6 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ParamCard from '../components/ParamCard'
 import WqiCard from '../components/WqiCard';
 import {Box, Button} from '@mui/material'
+import firebase from '../utils/firebase'
 import '../style/flexbox.css'
 import DisplayCard from '../components/DisplayCard'
 import {useNavigate} from 'react-router-dom';
