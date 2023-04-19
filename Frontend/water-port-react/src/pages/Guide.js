@@ -3,6 +3,8 @@ import {Box, Stack, Button} from '@mui/material'
 import '../style/guide.css'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {useNavigate} from 'react-router-dom';
+// import Stepper from '../components/Stepper';
+import LinearStepper from '../components/LinearStepper';
 
 
 
@@ -33,33 +35,23 @@ function Guide() {
             </Box>
 
             <Box >
-                
-                <h1 className='h1-guide'>Measuring Guide</h1>
+
+                <Box sx={{mb: 5}}>
+                    <h1 className='h1-guide'>Measuring Guide</h1>
               
-                <p className='p-guide'>Hold the probe in the water until the check turns green. 
-                <span className='break-point'>Remove the probe when the check turned green.</span></p> 
+                    <p className='p-guide'>Hold the probe in the water until the check turns green, 
+                    <span className='break-point'>then remove the probe "after" the check turned green.</span></p> 
+                
+                </Box>
                 
                 <div className='center'>
-
-                    <Box 
-                        sx={{
-                            width: 534,
-                            height: 576,
-                            backgroundColor: '#FFFFFF',
-                            borderRadius: 6,
-                            m: 4,
-                            boxShadow: 3
-                        }}
-                    >
-                        <Stack spacing={2}>
-                            
-                            
-
-                        </Stack>
-                    
+        
+                    {/* <Stepper></Stepper> */}
+                    <Box sx={{m:5}}>
+                        <LinearStepper></LinearStepper>
                     </Box>
+                    
                 </div>
-                
                 
             </Box>
         </div>

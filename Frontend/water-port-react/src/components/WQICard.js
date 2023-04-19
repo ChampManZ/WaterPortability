@@ -1,52 +1,168 @@
 import React from 'react'
+import {Box, Stack, Divider} from '@mui/material'
+import Grid from '@mui/material/Grid';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import excellent from '../image/excellent.png'
+import good from '../image/good.png'
+import average from '../image/average.png'
+import poor from '../image/poor.png'
+import verypoor from '../image/verypoor.png'
 
-function WQICard() {
 
-    const parameterStyle = {
-        textAlign: "start",
-        boxShadow: "0px 0px 15px -5px",
-        padding: "10px 10px",
-        width: "475px",
-        top: "15%",
-        position: "absolute"
-    }
+function WqiCard () {
 
-    return (
-        <div style={parameterStyle}>
-            <div>
-                <h2>Parameters</h2>
-            </div>
-            <div>
-                <h3>Temperature</h3>
-                <p>Fish and other organisms all have a preferred temperature range, and as temperature falls above or below this range, the number of individuals decreases. Water temperature is also important for its influence on water chemistry; warmer water can hold less dissolved oxygen.
+    const theme = createTheme({
+        components: {
+          // Name of the component
+          
+        },
+      });
 
-The water temperature index varies from 0 to 1. The temperature index decreases from 1 for every degree that water temperature is greater than 20°C.</p>
-            </div>
-            <div>
-                <h3>pH</h3>
-                <p>A method for determining the pH value in rain, drinking and mineral waters, bathing waters, surface and ground waters, as well as municipal and industrial waste waters, and liquid sludge, within the range pH 2 to pH 12 with an ionic strength below I = 0,3 mol/kg (conductivity at 25 °C less than 2000 mS/m) solvent and in the temperature range 0 °C to 50 °C.</p>
-            </div>
-            <div>
-                <h3>Turbidity</h3>
-                <p>ISO 7027-1:2016 specifies two quantitative methods using optical turbidimeters or nephelometers for the determination of turbidity of water:</p>
-                <p>a) nephelometry, procedure for measurement of diffuse radiation, applicable to water of low turbidity (for example drinking water).</p>
-                <p>b) turbidimetry, procedure for measurement of the attenuation of a radiant flux, more applicable to highly turbid waters (for example waste waters or other cloudy waters).</p>
-                <p>Turbidities measured according to the first method are presented as nephelometric turbidity units (NTU). The results typically range between less than 0,05 NTU and 400 NTU. Depending on the instrument design, it can also be applicable to waters of higher turbidity. There is numerical equivalence of the units NTU and formazin nephelometric unit (FNU).
 
-Turbidity measured by the second method is expressed in formazin attenuation units (FAU), results typically range between 40 FAU and 4 000 FAU.</p>
-            </div>
-            <div>
-                <h3>Conductivity</h3>
-                <p>Conductivity is a measure of the ability of water to conduct electricity. It is related to the amount of dissolved salt that is present in water. Water with a lot of salt can be dangerous to crops.
+    return(
+        <>
+        <ThemeProvider theme={theme}>
+            <Box sx={{
+                    backgroundColor: '#85D0FB',
+                    borderRadius: 4,
+                    boxShadow: 3,
+                    p: 4}}>
+                <Grid container columnSpacing={{ xs: 1, sm: 2}}>
+                    <Grid item xs={6} spacing={0}>
+                        <h2 className='h2-dash'>WQI</h2>
+                        <br></br>
 
-ICOND reaches a high of 20 when conductivity is 200 μS/cm (conductivity of drinking water). For conductivity values greater than 4000 μS/cm, ICOND = 0.</p>
-            </div>
-            <div>
-                <h3>TDS</h3>
-                <p>A measure of the dissolved combined content of all inorganic and organic substances present in a liquid in molecular, ionized, or micro-granular (colloidal sol) suspended form. TDS concentrations are often reported in parts per million (ppm). The solids must be small enough to survive filtration through a filter with 2-micrometer (nominal size, or smaller) pores</p>
-            </div>
-        </div>
+                        {/* excellent */}
+                        <Box sx={{ 
+                            backgroundColor: '#95F39F',
+                            p:1,
+                            m:0,
+                            height:81,
+                            }}>
+                                <Stack direction="row" spacing={5}>
+                                    <img src={excellent} alt="excellent" width="70" height="70"></img>
+                                    <Stack>
+                                        <h2 className='h2-dash'>excellent</h2>
+                                        <h3 className='p-dash'>91-100</h3>
+                                    </Stack>
+                                    
+                                    
+                                </Stack>
+                        </Box>
+
+                        {/* good */}
+                        <Box sx={{ 
+                            backgroundColor: '#C8F391',
+                            p:1,
+                            m:0,
+                            height:81}}>
+                                <Stack direction="row" spacing={5}>
+                                    <img src={good} alt="excellent" width="70" height="70"></img>
+                                    <Stack>
+                                        <h2 className='h2-dash'>good</h2>
+                                        <h3 className='p-dash'>71-90</h3>
+                                    </Stack>
+                                    
+                                    
+                                </Stack>
+                        </Box>
+
+                        {/* average */}
+                        <Box sx={{ 
+                            backgroundColor: '#F9F598',
+                            p:1,
+                            m:0,
+                            height:81}}>
+                                <Stack direction="row" spacing={5}>
+                                    <img src={average} alt="excellent" width="70" height="70"></img>
+                                    <Stack>
+                                        <h2 className='h2-dash'>average</h2>
+                                        <h3 className='p-dash'>51-70</h3>
+                                    </Stack>
+                                    
+                                    
+                                </Stack>
+                        </Box>
+
+                        {/* poor */}
+                        <Box sx={{ 
+                            backgroundColor: '#FBCE76',
+                            p:1,
+                            m:0,
+                            height:81}}>
+                                <Stack direction="row" spacing={5}>
+                                    <img src={poor} alt="excellent" width="70" height="70"></img>
+                                    <Stack>
+                                        <h2 className='h2-dash'>poor</h2>
+                                        <h3 className='p-dash'>26-50</h3>
+                                    </Stack>
+                                    
+                                    
+                                </Stack>
+                        </Box>
+
+                        {/* very poor */}
+                        <Box sx={{ 
+                            backgroundColor: '#F9AD95',
+                            p:1,
+                            m:0,
+                            height:81}}>
+                                <Stack direction="row" spacing={5}>
+                                    <img src={verypoor} alt="excellent" width="70" height="70"></img>
+                                    <Stack>
+                                        <h2 className='h2-dash'>very poor</h2>
+                                        <h3 className='p-dash'>0-25</h3>
+                                    </Stack>
+                                    
+                                    
+                                </Stack>
+                        </Box>
+                    </Grid>
+
+                    <Grid item xs={6} spacing={0}>
+                        <h2 className='h2-dash'>Possible Usage</h2>
+                        <br></br>
+                        <Box sx={{ backgroundColor: '#FFFFFF',
+                            p:1,
+                            height:80}}>
+                            <h3 className='h3-dash'>Drinking and irrigation</h3>
+                        </Box>
+                        <Divider></Divider>
+                        <Box sx={{ backgroundColor: '#FFFFFF',
+                            p:1,
+                            height:80}}>
+                            <h3 className='h3-dash'>Drinking and irrigation</h3>
+                        </Box>
+                        <Divider></Divider>
+                        <Box sx={{ backgroundColor: '#FFFFFF',
+                            p:1,
+                            height:80}}>
+                            <h3 className='h3-dash'>Irrigation and treatment needed before drinking</h3>
+                        </Box>
+                        <Divider></Divider>
+                        <Box sx={{ backgroundColor: '#FFFFFF',
+                            p:1,
+                            height:80}}>
+                            <h3 className='h3-dash'>Need attention for irrigation</h3>
+                        </Box>
+                        <Divider></Divider>
+                        <Box sx={{ backgroundColor: '#FFFFFF',
+                            p:1,
+                            height:80}}>
+                            <h3 className='h3-dash'>Unfit for all uses</h3>
+                        </Box>
+                    
+                    </Grid>
+
+                </Grid>
+                
+            </Box>
+
+
+        </ThemeProvider>
+        
+        </>
     )
 }
 
-export default WQICard
+export default WqiCard

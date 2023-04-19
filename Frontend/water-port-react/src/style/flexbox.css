@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
-.flex-container {
+/* .flex-container {
     display: flex;
     flex-direction: row;
 }
@@ -20,9 +20,9 @@
     align-content: space-evenly;
     align-items: center;
     gap: 20em
-}
+} */
 
-.parameter-container {
+/* .parameter-container {
     display: flex;
     justify-content: center;
     align-content: space-evenly;
@@ -76,4 +76,37 @@
     align-content: space-evenly;
     gap: 6.5em;
     background-color: #F9AD95;
+} */
+
+.h1-dash {
+    font-family: 'Mitr';
+    color: #3F3F3F;
+    font-size: 38px;
+    margin: 0px;
+    text-align: left;
+}
+
+.h2-dash {
+    font-family: 'Mitr';
+    color: #3F3F3F;
+    font-size: 26px;
+    margin: 0px;
+    text-align: left;
+}
+
+.h3-dash {
+    color: #3F3F3F;
+    font-size: 20px;
+    margin: 0px;
+    text-align: center;
+    padding: 25px 0;
+
+}
+
+.p-dash {
+    color: #3F3F3F;
+    font-size: 20px;
+    margin: 0px;
+    text-align: left;
+
 }

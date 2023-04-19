@@ -23,7 +23,7 @@
 
 .p-guide {
     font-size: 20px;
-    margin: 0;
+    margin-top: 7;
 }
 
 .break-point::before {
@@ -37,6 +37,13 @@
     display: flex;
     justify-content: center;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    padding: 90px;
+}
+
+.MuiStepLabel-labelContainer span {
+    font-family: 'Mitr';
+    color: #3F3F3F;
+    font-size: 20px;
 }
 
