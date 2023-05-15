@@ -126,57 +126,57 @@ export default function LinearStepper() {
         navigate('/dashboard');
       };
 
-      const tempCheck = ref(database, 'TemperatureCheck/')
+      const tempCheck = ref(database, 'TemperatureCheck/status')
       onValue(tempCheck, (snapshot) => {
           const data = snapshot.val();
           if (data === true) {
             setTempBool(true)
             const updates = {};
-            updates['TemperatureCheck/'] = false;
+            updates['TemperatureCheck/status'] = false;
             update(ref(database), updates)
           }
       });
 
-      const phCheck = ref(database, 'phCheck/')
+      const phCheck = ref(database, 'phCheck/status')
       onValue(phCheck, (snapshot) => {
           const data = snapshot.val();
           if (data === true) {
             setPhBool(true)
             const updates = {};
-            updates['phCheck/'] = false;
+            updates['phCheck/status'] = false;
             update(ref(database), updates)
           }
       });
 
-      const turbidityCheck = ref(database, 'TurbidityCheck/')
+      const turbidityCheck = ref(database, 'TurbidityCheck/status')
       onValue(turbidityCheck, (snapshot) => {
           const data = snapshot.val();
           if (data === true) {
             setTurbidityBool(true)
             const updates = {};
-            updates['TurbidityCheck/'] = false;
+            updates['TurbidityCheck/status'] = false;
             update(ref(database), updates)
           }
       });
 
-      const conductivityCheck = ref(database, 'ConductivityCheck/')
+      const conductivityCheck = ref(database, 'ConductivityCheck/status')
       onValue(conductivityCheck, (snapshot) => {
           const data = snapshot.val();
           if (data === true) {
             setConductivityBool(true)
             const updates = {};
-            updates['ConductivityCheck/'] = false;
+            updates['ConductivityCheck/status'] = false;
             update(ref(database), updates)
           }
       });
 
-      const tdsCheck = ref(database, 'TDSCheck/')
+      const tdsCheck = ref(database, 'TDSCheck/status')
       onValue(tdsCheck, (snapshot) => {
           const data = snapshot.val();
           if (data === true) {
             setTdsBool(true)
             const updates = {};
-            updates['TDSCheck/'] = false;
+            updates['TDSCheck/status'] = false;
             update(ref(database), updates)
           }
       });
@@ -214,12 +214,12 @@ export default function LinearStepper() {
                   <Button onClick={handleReset} variant="contained" sx={{width: 100}}>Reset</Button>
                   <Box sx={{ flex: '1 1 auto' }} />
 
-                  { tempBool ?
+                  { tempBool || phBool || turbidityBool || conductivityBool || tdsBool ?
                     <Button onClick={handleNext} variant="contained" sx={{width: 100}}>NEXT</Button>
                     : ''
                   }
 
-                  { phBool ?
+                  {/* { phBool ?
                     <Button onClick={handleNext} variant="contained" sx={{width: 100}}>NEXT</Button>
                     : ''
                   }
@@ -237,7 +237,7 @@ export default function LinearStepper() {
                   { tdsBool ?
                     <Button onClick={handleNext} variant="contained" sx={{width: 100}}>NEXT</Button>
                     : ''
-                  }
+                  } */}
 
                 </Box>
               </React.Fragment>
