@@ -26,10 +26,15 @@ function WqiCard () {
                     backgroundColor: '#85D0FB',
                     borderRadius: 4,
                     boxShadow: 3,
-                    p: 4}}>
-                <Grid container columnSpacing={{ xs: 1, sm: 2}}>
+                    pt: 4,
+                    pb: 4,
+                    mr: 15}}>
+                <Grid container spacing={0} >
                     <Grid item xs={6} spacing={0}>
-                        <h2 className='h2-dash'>WQI</h2>
+                        <Box sx={{pl:4}}>
+                            <h2 className='h2-dash' >WQI</h2>
+                        </Box>
+                        
                         <br></br>
 
                         {/* excellent */}
@@ -43,7 +48,7 @@ function WqiCard () {
                                     <img src={excellent} alt="excellent" width="70" height="70"></img>
                                     <Stack>
                                         <h2 className='h2-dash'>excellent</h2>
-                                        <h3 className='p-dash'>91-100</h3>
+                                        <h3 className='p-dash'>0-25</h3>
                                     </Stack>
                                     
                                     
@@ -60,7 +65,7 @@ function WqiCard () {
                                     <img src={good} alt="excellent" width="70" height="70"></img>
                                     <Stack>
                                         <h2 className='h2-dash'>good</h2>
-                                        <h3 className='p-dash'>71-90</h3>
+                                        <h3 className='p-dash'>25-50</h3>
                                     </Stack>
                                     
                                     
@@ -77,7 +82,7 @@ function WqiCard () {
                                     <img src={average} alt="excellent" width="70" height="70"></img>
                                     <Stack>
                                         <h2 className='h2-dash'>average</h2>
-                                        <h3 className='p-dash'>51-70</h3>
+                                        <h3 className='p-dash'>51-75</h3>
                                     </Stack>
                                     
                                     
@@ -94,7 +99,7 @@ function WqiCard () {
                                     <img src={poor} alt="excellent" width="70" height="70"></img>
                                     <Stack>
                                         <h2 className='h2-dash'>poor</h2>
-                                        <h3 className='p-dash'>26-50</h3>
+                                        <h3 className='p-dash'>76-100</h3>
                                     </Stack>
                                     
                                     
@@ -111,7 +116,7 @@ function WqiCard () {
                                     <img src={verypoor} alt="excellent" width="70" height="70"></img>
                                     <Stack>
                                         <h2 className='h2-dash'>very poor</h2>
-                                        <h3 className='p-dash'>0-25</h3>
+                                        <h3 className='p-dash'>101-150</h3>
                                     </Stack>
                                     
                                     
