@@ -103,6 +103,16 @@
 
 }
 
+.h3-measure {
+    font-family: 'Mitr';
+    color: #2ca5ec;
+    font-size: 25px;
+    margin: 0px;
+    text-align: right;
+    padding: 25px 0;
+
+}
+
 .p-dash {
     color: #3F3F3F;
     font-size: 20px;

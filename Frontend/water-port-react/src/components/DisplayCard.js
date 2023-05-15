@@ -1,6 +1,9 @@
-import React from "react";
-import {Box} from '@mui/material'
+// import React from "react";
+import React, { useState, Fragment } from "react";
+import {Box,Grid, Stack, Divider} from '@mui/material'
 import mqtt from "mqtt/dist/mqtt";
+
+
 
 const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 let options = {
@@ -41,11 +44,51 @@ client.on('connect', () => {
     client.subscribe('watermonitor', { qos: 0 })
   })
 
-client.on('message', (topic, message, packet) => {
-    console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
-})
+// client.on('message', (topic, message, packet) => {
+    
+//     // Updates React state with message
+//     setMsg(message.toString());
+//     console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
+// })
+
+//  // Sets default React state
+//  const [msg, setMsg] = useState(
+//     "red"
+//   );
+
+
 
 function DisplayCard() {
+    let array = []
+    const [msg, setMsg] = useState([]);
+
+    client.on('message', (topic, message, packet) => {
+    
+        
+        // console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
+
+        const msg = JSON.parse(message.toString())
+        console.log(msg)
+        // Updates React state with message
+        setMsg(msg);
+        // if(msg.length === 0) {
+        //     array.push(message)
+        // }
+        // else{
+        //     for(let i = 0; i<msg.length; i++) {
+        //         if (msg[i] !== message.toString()) {
+        //             array.push(message)
+        //         }
+        //     }
+            
+        // }
+        
+    })
+
+    
+
+    console.log(msg)
+
     return(
         <>
         
@@ -53,10 +96,61 @@ function DisplayCard() {
                     height: 370,
                     backgroundColor: '#FFFFFF',
                     borderRadius: 4,
-                    
-                    boxShadow: 3}}>
+                    boxShadow: 3,
+                    p: 3}}>
+            {/* <Stack direction="row" spacing={5} divider={<Divider orientation="vertical" flexItem />}>
+            
+                <Stack>
+                    <h3>Temperature</h3>
+                    <h1> {msg["temperature"]}</h1>
+                </Stack>
+                <Stack>
+                    <h3>Turbidity</h3>
+                    <h1> {msg["turbidity"]}</h1>
+                </Stack>
+                <Stack>
+                    <h3>TDS</h3>
+                    <h1> {msg["tds"]}</h1>
+                </Stack>
 
-                        
+            </Stack>
+
+            <Stack direction="row" spacing={5} divider={<Divider orientation="vertical" flexItem />}>
+                <Stack>
+                    <h3>pH</h3>
+                    <h1> {msg["tds"]}</h1>
+                </Stack>
+                <Stack>
+                    <h3>Conductivity</h3>
+                    <h1> {msg["tds"]}</h1>
+                </Stack>
+            </Stack> */}
+
+
+            <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                <Grid item xs={4}>
+                    <h3>Temperature</h3>
+                    <h1> {msg["temperature"]}</h1>
+                </Grid>
+                <Grid item xs={4}>
+                    <h3>Turbidity</h3>
+                    <h1> {msg["turbidity"]}</h1>
+                </Grid>
+                <Grid item xs={4}>
+                    <h3>TDS</h3>
+                    <h1> {msg["tds"]}</h1>
+                </Grid>
+                <Grid item xs={4}>
+                    <h3>pH</h3>
+                    {/* <h1> {msg["tds"]}</h1> */}
+                </Grid>
+                <Grid item xs={4}>
+                    <h3>Conductivity</h3>
+                    {/* <h1> {msg["tds"]}</h1> */}
+                </Grid>
+            </Grid>
+
+                
 
         </Box>
         

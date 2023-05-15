@@ -26,10 +26,15 @@ function WqiCard () {
                     backgroundColor: '#85D0FB',
                     borderRadius: 4,
                     boxShadow: 3,
-                    p: 4}}>
-                <Grid container columnSpacing={{ xs: 1, sm: 2}}>
+                    pt: 4,
+                    pb: 4,
+                    mr: 15}}>
+                <Grid container spacing={0} >
                     <Grid item xs={6} spacing={0}>
-                        <h2 className='h2-dash'>WQI</h2>
+                        <Box sx={{pl:4}}>
+                            <h2 className='h2-dash' >WQI</h2>
+                        </Box>
+                        
                         <br></br>
 
                         {/* excellent */}
