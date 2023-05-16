@@ -77,6 +77,10 @@
     gap: 6.5em;
     background-color: #F9AD95;
 } */
+.h1-wqi {
+    font-size: 55px;
+    margin: 0px;
+}
 
 .h1-dash {
     font-family: 'Mitr';
@@ -108,7 +112,7 @@
     color: #2ca5ec;
     font-size: 25px;
     margin: 0px;
-    text-align: right;
+    /* text-align: right; */
     padding: 25px 0;
 
 }

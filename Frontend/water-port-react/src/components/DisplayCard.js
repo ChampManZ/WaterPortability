@@ -97,7 +97,7 @@ function DisplayCard() {
                     backgroundColor: '#FFFFFF',
                     borderRadius: 4,
                     boxShadow: 3,
-                    p: 3}}>
+                    }}>
             {/* <Stack direction="row" spacing={5} divider={<Divider orientation="vertical" flexItem />}>
             
                 <Stack>
@@ -126,31 +126,36 @@ function DisplayCard() {
                 </Stack>
             </Stack> */}
 
+            <Box
+                m={1}
+                display="flex"
+                justifyContent="center"
+                alignItems="center">
+            
+                <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                    <Grid item xs={4}>
+                        <h3>Temperature</h3>
+                        <h1> {msg["temperature"]}</h1>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <h3>Turbidity</h3>
+                        <h1> {msg["turbidity"]}</h1>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <h3>TDS</h3>
+                        <h1> {msg["tds"]}</h1>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <h3>pH</h3>
+                        <h1> {msg["ph"]}</h1>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <h3>Conductivity</h3>
+                        {/* <h1> {msg["tds"]}</h1> */}
+                    </Grid>
+                </Grid>
 
-            <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={4}>
-                    <h3>Temperature</h3>
-                    <h1> {msg["temperature"]}</h1>
-                </Grid>
-                <Grid item xs={4}>
-                    <h3>Turbidity</h3>
-                    <h1> {msg["turbidity"]}</h1>
-                </Grid>
-                <Grid item xs={4}>
-                    <h3>TDS</h3>
-                    <h1> {msg["tds"]}</h1>
-                </Grid>
-                <Grid item xs={4}>
-                    <h3>pH</h3>
-                    <h1> {msg["ph"]}</h1>
-                </Grid>
-                <Grid item xs={4}>
-                    <h3>Conductivity</h3>
-                    {/* <h1> {msg["tds"]}</h1> */}
-                </Grid>
-            </Grid>
-
-                
+            </Box>  
 
         </Box>
         

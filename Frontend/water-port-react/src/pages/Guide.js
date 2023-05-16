@@ -68,8 +68,8 @@ function Guide() {
                 <Box sx={{mb: 5}}>
                     <h1 className='h1-guide'>Measuring Guide</h1>
               
-                    <p className='p-guide'>Hold the probe in the water until the check turns green, 
-                    <span className='break-point'>then remove the probe "after" the check turned green.</span></p> 
+                    <p className='p-guide'>Hold the probe in the water until the check appear. 
+                    <span className='break-point'>Click next button to proceed to the next sensor.</span></p> 
                 
                 </Box>
                 

@@ -3,10 +3,9 @@ import Navbar from '../components/Navbar'
 import Grid from '@mui/material/Grid';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ParamCard from '../components/ParamCard'
-import WQICard from '../components/WQICard';
+import WqiCard from '../components/WqiCard';
 import {Box, Button, Stack} from '@mui/material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import firebase from '../utils/firebase'
 import '../style/flexbox.css'
 import DisplayCard from '../components/DisplayCard'
 import {useNavigate} from 'react-router-dom';
@@ -65,7 +64,15 @@ function Dashboard() {
                             <h1 className='h1-dash'>Your Water Quality</h1>
                             <Box sx={{mt:5}}>
                                 <QualityCard></QualityCard>
-                                <Button onClick={navigateToLand}> <h3 className='h3-measure'>Measure Again</h3></Button>
+                                <Box
+                                    m={1} 
+                                    display="flex"
+                                    justifyContent="flex-start"
+                                    alignItems="flex-start"
+                                    
+                                    >
+                                    <Button onClick={navigateToLand}> <h3 className='h3-measure'>Measure Again</h3></Button>
+                                </Box>
                             </Box>
                             {/* <Box sx={{ height: 70}}>
 
@@ -87,7 +94,7 @@ function Dashboard() {
                         
                             <h1 className='h1-dash'> Water Quality Index</h1>
                             <Box sx={{mt:5, mb:3}}>
-                                <WQICard></WQICard>
+                                <WqiCard></WqiCard>
                             </Box>
                             
                         </Grid>
