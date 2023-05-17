@@ -65,7 +65,7 @@ function WqiCard () {
                                     <img src={good} alt="excellent" width="70" height="70"></img>
                                     <Stack>
                                         <h2 className='h2-dash'>good</h2>
-                                        <h3 className='p-dash'>25-50</h3>
+                                        <h3 className='p-dash'>26-50</h3>
                                     </Stack>
                                     
                                     

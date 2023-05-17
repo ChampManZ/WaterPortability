@@ -1,9 +1,9 @@
 // import React from "react";
 import React, { useState, Fragment } from "react";
-import {Box,Grid, Stack, Divider} from '@mui/material'
+import {Box,Grid} from '@mui/material'
 import mqtt from "mqtt/dist/mqtt";
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, onValue, update } from "firebase/database";
+import { getDatabase, ref, onValue } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -61,7 +61,7 @@ client.on('connect', () => {
     console.log('Client connected:' + clientId)
     // Subscribe
     client.subscribe('watermonitor', { qos: 0 })
-  })
+})
 
   const tempValue = ref(database, 'TemperatureCheck/value')
   onValue(tempValue, (snapshot) => {
@@ -118,7 +118,7 @@ client.on('connect', () => {
 
 
 function DisplayCard() {
-    let array = []
+    // let array = []
     const [msg, setMsg] = useState([]);
 
     // const [tempDis, setTempDis] = useState(0)
@@ -145,8 +145,6 @@ function DisplayCard() {
         // }
         
     })
-
-    
 
     console.log(msg)
 
@@ -197,27 +195,27 @@ function DisplayCard() {
                     <Grid item xs={4}>
                         <h3>Temperature</h3>
                         <h1> {msg["temperature"]}</h1>
-                        <h1 id="tempID"></h1>
+                        <h1 id="tempID"> </h1>
                     </Grid>
                     <Grid item xs={4}>
                         <h3>Turbidity</h3>
                         <h1> {msg["turbidity"]}</h1>
-                        <h1 id="turbidityID"></h1>
+                        <h1 id="turbidityID"> </h1>
                     </Grid>
                     <Grid item xs={4}>
                         <h3>TDS</h3>
                         <h1> {msg["tds"]}</h1>
-                        <h1 id="tdsID"></h1>
+                        <h1 id="tdsID"> </h1>
                     </Grid>
                     <Grid item xs={4}>
                         <h3>pH</h3>
                         <h1> {msg["ph"]}</h1>
-                        <h1 id="phID"></h1>
+                        <h1 id="phID"> </h1>
                     </Grid>
                     <Grid item xs={4}>
                         <h3>Conductivity</h3>
                         {/* <h1> {msg["tds"]}</h1> */}
-                        <h1 id="conductID"></h1>
+                        <h1 id="conductID"> </h1>
                     </Grid>
                 </Grid>
 
