@@ -52,15 +52,15 @@ function QualityCard () {
                         <Stack spacing={6}>
 
                         
-                            <h3 className='p-dash'>temperature (°C) : </h3>
+                            <h3 className='p-dash'>Temperature (°C) : </h3>
                             
-                            <h3 className='p-dash'>turbidity (NTU) : </h3>
+                            <h3 className='p-dash'>Turbidity (NTU) : </h3>
                             
                             <h3 className='p-dash'>TDS (mg/l) : </h3>
                             
                             <h3 className='p-dash'>pH : </h3>
                             
-                            <h3 className='p-dash'>conductivity (µS/cm) : </h3>
+                            <h3 className='p-dash'>Conductivity (µS/cm) : </h3>
                         </Stack>
                     </Grid>
                     

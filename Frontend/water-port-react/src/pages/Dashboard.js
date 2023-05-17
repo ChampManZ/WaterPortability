@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Grid from '@mui/material/Grid';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ParamCard from '../components/ParamCard'
-import WqiCard from '../components/WqiCard';
+import WQICard from '../components/WQICard';
 import {Box, Button, Stack} from '@mui/material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import '../style/flexbox.css'
@@ -94,7 +94,7 @@ function Dashboard() {
                         
                             <h1 className='h1-dash'> Water Quality Index</h1>
                             <Box sx={{mt:5, mb:3}}>
-                                <WqiCard></WqiCard>
+                                <WQICard></WQICard>
                             </Box>
                             
                         </Grid>
