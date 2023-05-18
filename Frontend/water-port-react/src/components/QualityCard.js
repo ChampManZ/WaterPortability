@@ -155,7 +155,7 @@ function QualityCard () {
             setWqiText('Excellent')
             console.log('EX HERE')
         }         else if (msg["wqi"] >= 25 && msg["wqi"] <= 50) {
-            setBackgroundColorDynamic('##C8F391')
+            setBackgroundColorDynamic('#C8F391')
             setWqiImgDynamic(good)
             setWqiText('Good')
             console.log('GOOD HERE')
