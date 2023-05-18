@@ -45,7 +45,7 @@ function ParamCard() {
             </p>
             <br></br>
             <b>
-            <p className='p-dash'>Recommended Value: 200-800 µS/cm.</p></b>
+            <p className='p-dash'>Recommended Value: 0-800 µS/cm.</p></b>
             <br></br>
 
             <h2 className='h2-dash'>TDS</h2>

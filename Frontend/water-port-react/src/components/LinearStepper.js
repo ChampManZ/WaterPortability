@@ -76,11 +76,11 @@ import {
 
 
 function getSteps() {
-return ["Hold temperature probe into the water", 
-        "Hold pH probe into the water", 
-        "Hold turbidity probe into the water",
-        "Hold conductivity probe into the water",
-        "Hold TDS probe into the water"];
+return ["Hold pH probe into the water", 
+        "Hold TDS probe into the water", 
+        "Hold Turbidity probe into the water",
+        "Hold Temperature probe into the water",
+        "Hold Conductivity probe into the water"];
 }
 
 // function getStepContent(step) {
