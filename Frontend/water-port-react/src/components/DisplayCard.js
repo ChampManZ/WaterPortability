@@ -66,7 +66,6 @@ function DisplayCard() {
         // console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
 
         const msg = JSON.parse(message.toString())
-        console.log(msg)
         // Updates React state with message
         setMsg(msg);
         // if(msg.length === 0) {
@@ -82,8 +81,6 @@ function DisplayCard() {
         // }
         
     })
-
-    console.log(msg)
 
     return(
         <>

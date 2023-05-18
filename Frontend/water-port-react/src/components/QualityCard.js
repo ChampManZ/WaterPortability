@@ -121,8 +121,6 @@ function QualityCard () {
     const [backgroundColorDynamic, setBackgroundColorDynamic] = useState('')
     const [wqiImgDynamic, setWqiImgDynamic] = useState()
 
-    let testWQI = 1
-
     const [msg, setMsg] = useState([]);
     const [wqiText, setWqiText] = useState('')
 
@@ -134,7 +132,6 @@ function QualityCard () {
         // console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
 
         const msg = JSON.parse(message.toString())
-        console.log(msg)
         // Updates React state with message
         setMsg(msg);
         // if(msg.length === 0) {
@@ -151,73 +148,34 @@ function QualityCard () {
         
     })
 
-    console.log(msg)
-
     useEffect(() => {
         if (msg["wqi"] >= 0 && msg["wqi"] <= 25) {
             setBackgroundColorDynamic('#95F39F')
             setWqiImgDynamic(excellent)
             setWqiText('Excellent')
-        }
-    
-        if (msg["wqi"] >= 25 && msg["wqi"] <= 50) {
-            setBackgroundColorDynamic('##C8F391')
-            setWqiImgDynamic(good)
-            setWqiText('Good')
-        }
-    
-        if (msg["wqi"] >= 51 && msg["wqi"] <= 75) {
-            setBackgroundColorDynamic('#F9F598')
-            setWqiImgDynamic(average)
-            setWqiText('Average')
-        }
-    
-        if (msg["wqi"] >= 76 && msg["wqi"] <= 100) {
-            setBackgroundColorDynamic('#FBCE76')
-            setWqiImgDynamic(poor)
-            setWqiText('Poor')
-        }
-    
-        if (msg["wqi"] >= 101 && msg["wqi"] <= 150) {
-            setBackgroundColorDynamic('#F9AD95')
-            setWqiImgDynamic(verypoor)
-            setWqiText('Very Poor')
-        }
-    })
-
-    useEffect(() => {
-
-        if (testWQI >= 0 && testWQI <= 25) {
-            setBackgroundColorDynamic('#95F39F')
-            setWqiImgDynamic(excellent)
-            setWqiText('Excellent')
-        }
-
-        if (testWQI >= 26 && testWQI <= 50) {
+            console.log('EX HERE')
+        }         else if (msg["wqi"] >= 25 && msg["wqi"] <= 50) {
             setBackgroundColorDynamic('#C8F391')
             setWqiImgDynamic(good)
             setWqiText('Good')
-        }
-    
-        if (testWQI >= 51 && testWQI <= 75) {
+            console.log('GOOD HERE')
+        }           else if (msg["wqi"] >= 51 && msg["wqi"] <= 75) {
             setBackgroundColorDynamic('#F9F598')
             setWqiImgDynamic(average)
             setWqiText('Average')
-        }
-    
-        if (testWQI >= 76 && testWQI <= 100) {
+            console.log('AVG HERE')
+        }           else if (msg["wqi"] >= 76 && msg["wqi"] <= 100) {
             setBackgroundColorDynamic('#FBCE76')
             setWqiImgDynamic(poor)
             setWqiText('Poor')
-        }
-    
-        if (testWQI >= 101 && testWQI <= 150) {
+            console.log('POOR HERE')
+        }           else if (msg["wqi"] >= 101 && msg["wqi"] <= 150) {
             setBackgroundColorDynamic('#F9AD95')
             setWqiImgDynamic(verypoor)
             setWqiText('Very Poor')
+            console.log('VP HERE')
         }
-
-    }, )
+    }, [])
 
     return (
         <>
