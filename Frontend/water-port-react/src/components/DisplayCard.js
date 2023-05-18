@@ -151,7 +151,7 @@ function DisplayCard() {
                     </Grid>
                     <Grid item xs={4}>
                         <h3>Conductivity</h3>
-                        <h1> {msg["tds"]}</h1>
+                        <h1> {msg["conductivity"]}</h1>
                         {/* <h1 id="conductID"> </h1> */}
                     </Grid>
                 </Grid>
