@@ -66,7 +66,6 @@ function DisplayCard() {
         // console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
 
         const msg = JSON.parse(message.toString())
-        console.log(msg)
         // Updates React state with message
         setMsg(msg);
         // if(msg.length === 0) {
@@ -82,8 +81,6 @@ function DisplayCard() {
         // }
         
     })
-
-    console.log(msg)
 
     return(
         <>
@@ -151,7 +148,7 @@ function DisplayCard() {
                     </Grid>
                     <Grid item xs={4}>
                         <h3>Conductivity</h3>
-                        <h1> {msg["tds"]}</h1>
+                        <h1> {msg["conductivity"]}</h1>
                         {/* <h1 id="conductID"> </h1> */}
                     </Grid>
                 </Grid>
